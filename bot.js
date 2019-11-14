@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = ""; // ضع البريفكس الخاص بك هنا
-
+const prefix = "$";
 
 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
 console.log('         [Wait please .. ]       ')
@@ -138,6 +137,26 @@ client.on('message' , message => {//bcrole
       message.channel.send(`**لقد تم ارسال هذه الرسالة الى ${message.guild.members.filter(m => m.roles.get(role.id)).size} عظو**`);
     }
 });
-
+client.on('message', msg => {
+  if (msg.content === 'هلا') {
+    msg.reply('هلا بيك حبيبي');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'سلام عليكم') {
+    msg.reply('وعليكم السلام ورحمة الله تعالى وبركاته');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'ip') {
+    msg.reply('Play.GrayWolf.fmcs.cf!');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'الالعاب') {
+    msg.reply('قريبا
+	      :__::1_::3_:');
+  }
+});
 
 client.login(process.env.BOT_TOKEN);
