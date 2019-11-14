@@ -155,7 +155,7 @@ client.on('message', msg => {
 });
 client.on('message', msg => {
   if (msg.content === 'games') {
-    msg.reply(':__::1_::3_:');
+    msg.reply(':bedwars:');
   }
 });
 
