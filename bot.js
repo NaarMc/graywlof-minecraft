@@ -153,59 +153,6 @@ client.on('message', msg => {
     msg.reply('Play.FireMc.fmcs.cf!');
   }
 });
-client.on('message', message => {
-             if (!message.channel.guild) return;
-      if (message.author.bot) return;
-
-  if (!message.content.startsWith(prefix)) return;
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  let args = message.content.split(" ").slice(1);
-  
-  if (command === 'invites') {
-    message.guild.fetchInvites().then(invs => {
-      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
-      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
-      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-    return message.reply(`**${inviteCount}: عدد الاشخاص الذي دعوتهم هو**`)
-
-});
-}});   
- 
-        const arraySort = require('array-sort'), // npm i array-sort
-          table = require('table'); //npm i taple
-
-client.on('message' , async (message) => {
-
- if(message.content.split(' ')[0].toLowerCase() == prefix + 'top') {
-                 if(message.author.bot) return;
-        if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
-
-  var invites = await message.guild.fetchInvites();
-
-    invites = invites.array();
-
-    arraySort(invites, 'uses', { reverse: true });
-
-    let possibleInvites = ['User Invited |  Uses '];
-    invites.forEach(i => {
-        if (i.uses === 0) { 
-            return;
-            
-        }
-      possibleInvites.push(['\n\ ' +'<@'+ i.inviter.id +'>' + '  :  ' +   i.uses]);
-    
-     
-    })
-    
-    const embed = new Discord.RichEmbed()
- .setColor('#36393e')
-    .addField("Top Invites." ,`${(possibleInvites)}`)
-
-    message.channel.send(embed)
-    }
-});
-
 
 
 
