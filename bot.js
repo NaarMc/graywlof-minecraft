@@ -147,9 +147,15 @@ client.on('message', msg => {
     msg.reply('وعليكم السلام ورحمة الله تعالى وبركاته');
   }
 });
+
 client.on('message', msg => {
   if (msg.content === 'ip') {
     msg.reply('Play.GrayWolf.fmcs.cf!');
+  }
+});
+client.on('message', msg => {
+  if (msg.content === 'games') {
+    msg.reply(':__::1_::3_:');
   }
 });
 
