@@ -150,14 +150,10 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 'ip') {
-    msg.reply('Play.GrayWolf.fmcs.cf!');
+    msg.reply('Play.FireMc.fmcs.cf!');
   }
 });
-client.on('message', msg => {
-  if (msg.content === 'games') {
-    msg.reply(':bedwars:');
-  }
-});
+
 
 
 client.login(process.env.BOT_TOKEN);
