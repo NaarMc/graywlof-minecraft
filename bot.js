@@ -152,11 +152,6 @@ client.on('message', msg => {
     msg.reply('Play.GrayWolf.fmcs.cf!');
   }
 });
-client.on('message', msg => {
-  if (msg.content === 'الالعاب') {
-    msg.reply('قريبا
-	      :__::1_::3_:');
-  }
-});
+
 
 client.login(process.env.BOT_TOKEN);
